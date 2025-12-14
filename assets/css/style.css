@@ -1,22 +1,141 @@
-.grid-container{
-    display:grid;
-    grid-template-columns: auto auto;
-    column-gap: 0;
-    row-gap: 10px;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.grid-container2{
-    display:grid;
-    grid-template-columns: 10% auto auto;
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: "navbar navbar" "sidebar gallery" "footer footer";
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 60px 1fr 50px;
+    background: #FAF9F7;
+    color: #3F3F3F;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    grid-area: navbar;
+    background: #D8CFC4;
+    color: #3F3F3F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background: #EFE8DE;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
-.grid-container3{
-    display:grid;
-    grid-template-columns: auto;
-    gap: 10px;
+.sidebar h3{
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    color: #4A4A4A;
 }
 
-.grid-item{
-    border: 1px solid rebeccapurple;
+.sidebar a{
+    text-decoration: none;
+    color: #3F3F3F;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    padding: 6px 0;
 }
+
+.sidebar a:hover{
+    text-decoration: underline;
+}
+
+.gallery{
+    grid-area: gallery;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 32px;
+}
+
+.card{
+    background: #FFFFFF;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card img{
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4A4A4A;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card button{
+    margin-top: auto;
+    width: 100%;
+    padding: 12px 0;
+    background: #D8CFC4;
+    color: #3F3F3F;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card button:hover{
+    background: #C7BDB2;
+}
+
+.price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #8A8A8A;
+    margin-bottom: 10px;
+}
+
+footer{
+    grid-area: footer;
+    background: #D8CFC4;
+    color: #3F3F3F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+
+
+
+
+
